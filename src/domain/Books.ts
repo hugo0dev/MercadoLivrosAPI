@@ -1,5 +1,5 @@
 import { IBooksDTO } from '../dto/IBooksDTO';
-import { IBooksPersistence } from '../../persistence/dataSchemas/IBooksPersistence';
+import { IBooksPersistence } from '../persistence/dataSchemas/IBooksPersistence';
 
 export class Books {
     isbn13: string;

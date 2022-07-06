@@ -1,7 +1,7 @@
 import { IBooksRepository }  from "../interfaces/IBookRepository";
 import { IBooksDTO } from "../../dto/IBooksDTO";
-import BooksSchema from "../../../persistence/schemas/BooksSchema";
-import { IBooksPersistence } from '../../../persistence/dataSchemas/IBooksPersistence';
+import BooksSchema from "../../persistence/schemas/BooksSchema";
+import { IBooksPersistence } from '../../persistence/dataSchemas/IBooksPersistence';
 import { BooksMapper } from '../../mappers/BooksMapper';
 
 export class MongoBooksRepository implements IBooksRepository{
