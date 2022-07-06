@@ -1,4 +1,4 @@
-import { BooksService } from "../services/BooksService";
+import { BooksService } from "../service/BooksService";
 import { Request, Response, NextFunction } from "express";
 import { IBooksDTO } from "../dto/IBooksDTO";
 
@@ -33,6 +33,9 @@ export class BooksController {
 	get = async (req: Request, res: Response, next: NextFunction) => {
 	try {
 			let result = await this.service.getAllBooks();
+			if(result.length===0){
+				return res.status(404).send("There are no books in the database")
+			}
 			res.status(200).send(result);
 		} catch (error) {
 			res.status(503).send((error as Error).message);
