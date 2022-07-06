@@ -7,4 +7,9 @@ export class Routes{
     constructor(){
         this._books = new BooksRoute();
     }
+
+    
+    public get books() : BooksRoute {
+        return this._books;
+    }   
 }
