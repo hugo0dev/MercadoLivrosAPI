@@ -6,27 +6,29 @@ export class Books {
 	titulo: string;
 	autor: string;
     editora: string;
-	posVendas: number;
+	posVenda: number;
 	dataLancamento: Date;
 
-    private constructor(isbn13: string,	titulo: string,	autor: string, editora: string, posVendas: number, dataLancamento: Date){
+    private constructor(isbn13: string,	titulo: string,	autor: string, editora: string, posVenda: number, dataLancamento: Date){
         this.isbn13 = isbn13;
 	    this.titulo = titulo;
 	    this.autor = autor;
         this.editora = editora;
-	    this.posVendas = posVendas;
+	    this.posVenda = posVenda;
 	    this.dataLancamento = dataLancamento;
     }
 
     public static instantiate(booksDTO: IBooksDTO | IBooksPersistence): Books {
+        
+
         if( booksDTO.isbn13 &&
             booksDTO.titulo &&
             booksDTO.autor &&
             booksDTO.editora &&
-            booksDTO.posVendas &&
-            booksDTO.dataLancamento
+            booksDTO.posVenda/* &&
+            booksDTO.dataLancamento*/
           )
-            return new Books(booksDTO.isbn13, booksDTO.titulo, booksDTO.autor, booksDTO.editora, booksDTO.posVendas, booksDTO.dataLancamento);
+            return new Books(booksDTO.isbn13, booksDTO.titulo, booksDTO.autor, booksDTO.editora, booksDTO.posVenda/*, booksDTO.dataLancamento*/);
         else 
             throw new Error("Book fields cannot be empty nor wrongfully posted")
     }
