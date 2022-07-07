@@ -12,7 +12,7 @@ export class MongoBooksRepository implements IBooksRepository{
 
     async findAll() : Promise<IBooksDTO[]>{
         console.log("MongoBooksRepository: getAllBooks: <program passed here>");
-        let booksDocs = await BooksSchema.find();
+        let booksDocs = await BooksSchema.find().sort({posVenda:1}).limit(10);
         console.log("booksDocs:", booksDocs)
         
         if(booksDocs.length==0)
