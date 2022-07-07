@@ -3,7 +3,7 @@ export interface IBooksDTO {
     titulo: string;
     autor: string;
     editora: string;
-    posVendas: number;
+    posVenda: number;
     dataLancamento: Date;
 }
   
