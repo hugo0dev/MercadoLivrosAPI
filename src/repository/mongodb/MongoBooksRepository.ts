@@ -13,6 +13,8 @@ export class MongoBooksRepository implements IBooksRepository{
     async findAll() : Promise<IBooksDTO[]>{
         console.log("MongoBooksRepository: getAllBooks: <program passed here>");
         let booksDocs = await BooksSchema.find();
+        console.log("booksDocs:", booksDocs)
+        
         if(booksDocs.length==0)
             console.log("No books were found.")
         return booksDocs.map((doc: IBooksDTO | IBooksPersistence) => BooksMapper.toDomain(doc))

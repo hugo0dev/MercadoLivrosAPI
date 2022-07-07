@@ -1,4 +1,4 @@
-import { IBooksDTO } from "../../../dto/IBooksDTO";
+import { IBooksDTO } from "../../dto/IBooksDTO";
 
 export interface IBooksService {
 	getAllBooks: () => Promise<IBooksDTO[]>;
