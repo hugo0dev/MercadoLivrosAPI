@@ -11,7 +11,7 @@ export class BooksMapper{
             autor: book.autor,
             editora: book.editora,
             posVenda: book.posVenda,
- /*           dataLancamento: book.dataLancamento*/
+           dataLancamento: book.dataLancamento
         } as IBooksDTO;
     }
 

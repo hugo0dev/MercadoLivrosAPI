@@ -8,7 +8,7 @@ const BooksSchema = new mongoose.Schema(
         autor: {type: String, required: true},
         editora: {type: String},
         posVenda: {type: Number, unique: true},
-/*        dataLancamento: {type: Date}        */
+        dataLancamento: {type: Date}        
     },
     {
         collection : "booksMercado",

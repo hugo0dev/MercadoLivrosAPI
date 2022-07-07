@@ -4,5 +4,5 @@ export interface IBooksPersistence {
     autor: string;
     editora: string;
     posVenda: number;
- /*   dataLancamento: Date;*/
+    dataLancamento: Date;
   }

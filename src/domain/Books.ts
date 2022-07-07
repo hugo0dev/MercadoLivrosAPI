@@ -20,15 +20,22 @@ export class Books {
 
     public static instantiate(booksDTO: IBooksDTO | IBooksPersistence): Books {
         
+        console.log("booksDTO:",booksDTO);
+        console.log("isbn13:",booksDTO.isbn13);
+        console.log("titulo:",booksDTO.titulo);
+        console.log("autor:",booksDTO.autor);
+        console.log("editora:",booksDTO.editora);
+        console.log("posVenda:", booksDTO.posVenda);
+        console.log("dataLancamento:",booksDTO.dataLancamento);
 
         if( booksDTO.isbn13 &&
             booksDTO.titulo &&
             booksDTO.autor &&
             booksDTO.editora &&
-            booksDTO.posVenda/* &&
-            booksDTO.dataLancamento*/
+            booksDTO.posVenda &&
+            booksDTO.dataLancamento
           )
-            return new Books(booksDTO.isbn13, booksDTO.titulo, booksDTO.autor, booksDTO.editora, booksDTO.posVenda/*, booksDTO.dataLancamento*/);
+            return new Books(booksDTO.isbn13, booksDTO.titulo, booksDTO.autor, booksDTO.editora, booksDTO.posVenda, booksDTO.dataLancamento);
         else 
             throw new Error("Book fields cannot be empty nor wrongfully posted")
     }
